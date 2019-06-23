@@ -1,2 +1,6 @@
 include ':app'
+include ':features:ui:themes:theme_base'
+include ':features:ui:themes:theme_day'
+include ':features:ui:themes:theme_night'
+include ':features:ui:themes:theme_app'
 rootProject.name='Android Samples'
