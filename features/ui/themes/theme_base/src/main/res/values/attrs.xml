@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="buttonMinSize" format="dimension" />
+    <attr name="buttonCornersRadius" format="dimension" />
+
+    <attr name="primaryButtonStyle" format="reference" />
+    <attr name="primaryButtonBackgroundRipple" format="color" />
+    <attr name="primaryButtonBackground" format="reference|color" />
+    <attr name="primaryButtonBackgroundDefault" format="reference|color" />
+    <attr name="primaryButtonBackgroundDisabled" format="reference|color" />
+    <attr name="primaryButtonTextAppearance" format="reference" />
+    <attr name="primaryButtonTextSize" format="dimension" />
+    <attr name="primaryButtonTextColor" format="reference|color" />
+
+    <attr name="secondaryButtonStyle" format="reference" />
+    <attr name="secondaryButtonBackgroundRipple" format="color" />
+    <attr name="secondaryButtonBackground" format="reference|color" />
+    <attr name="secondaryButtonBackgroundDefault" format="reference|color" />
+    <attr name="secondaryButtonBackgroundDisabled" format="reference|color" />
+    <attr name="secondaryButtonTextAppearance" format="reference" />
+    <attr name="secondaryButtonTextSize" format="dimension" />
+    <attr name="secondaryButtonTextColor" format="reference|color" />
+
+    <attr name="verticalSpaceSmall" format="dimension"/>
+    <attr name="dividerVerticalSpaceSmall" format="dimension"/>
+    <attr name="screenPadding" format="dimension"/>
+
+    <attr name="rootContainer" format="reference" />
+</resources>

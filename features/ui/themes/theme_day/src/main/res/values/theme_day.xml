@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+           tools:ignore="ResourceName">
+
+    <style name="UITheme.Day" parent="Base.UITheme">
+        <item name="android:textAllCaps">true</item>
+        <item name="primaryButtonTextColor">@color/td_primaryButtonTextColor</item>
+        <item name="primaryButtonTextAppearance">@style/UITextAppearance.Primary.Day</item>
+        <item name="primaryButtonBackground">@drawable/td_background_button_primary</item>
+        <item name="primaryButtonTextSize">@dimen/td_buttonPrimaryTextSize</item>
+
+        <item name="secondaryButtonTextColor">@color/td_text_secondary</item>
+        <item name="secondaryButtonTextAppearance">@style/UITextAppearance.Secondary.Day</item>
+        <item name="secondaryButtonBackground">@drawable/td_background_button_secondary</item>
+        <item name="secondaryButtonTextSize">@dimen/td_buttonSecondaryTextSize</item>
+
+        <item name="verticalSpaceSmall">@dimen/gap_small</item>
+        <item name="dividerVerticalSpaceSmall">@drawable/divider_vertical_small</item>
+        <item name="screenPadding">@dimen/gap_large</item>
+        <item name="buttonMinSize">@dimen/button_min_size</item>
+        <item name="primaryButtonStyle">@style/UIButton.Primary</item>
+        <item name="secondaryButtonStyle">@style/UIButton.Secondary</item>
+    </style>
+
+    <style name="UITextAppearance.Primary.Day">
+        <item name="android:fontFamily">monospace</item>
+    </style>
+    <style name="UITextAppearance.Secondary.Day">
+        <item name="android:fontFamily">cursive</item>
+    </style>
+</resources>

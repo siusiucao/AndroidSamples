@@ -1,6 +1,10 @@
 apply plugin: 'com.android.library'
 apply from: "$rootProject.projectDir/build-android.gradle"
 
+android {
+    resourcePrefix 'tn_'
+}
+
 dependencies {
     implementation project(":features:ui:themes:theme_base")
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tn_primaryButtonBackgroundRipple">#FFF</color>
+    <color name="tn_primaryButtonBackgroundDefault">#802920</color>
+    <color name="tn_primaryButtonBackgroundDisabled">#FF866967</color>
+    <color name="tn_primaryButtonTextColor">#FFF</color>
+
+    <color name="tn_secondaryButtonTextColorDefault">#000</color>
+    <color name="tn_secondaryButtonBackgroundRipple">@color/tn_primaryButtonBackgroundRipple</color>
+    <color name="tn_secondaryButtonTextColorDisabled">#FFF</color>
+    <color name="tn_secondaryButtonBackgroundDefault">#7C5E21</color>
+    <color name="tn_secondaryButtonBackgroundPressed">#f7e1b7</color>
+    <color name="tn_secondaryButtonBackgroundDisabled">#FF5F5747</color>
+</resources>

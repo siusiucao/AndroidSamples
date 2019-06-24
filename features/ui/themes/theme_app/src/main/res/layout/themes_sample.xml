@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
+              android:showDividers="middle"
+              style="?rootContainer"
+              android:divider="?dividerVerticalSpaceSmall"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:ignore="HardcodedText">
+
+    <Button
+            android:id="@+id/change_theme"
+            android:text="Change Theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            style="?attr/primaryButtonStyle"
+            android:text="Primary Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            style="?attr/primaryButtonStyle"
+            android:text="Primary Button Disabled"
+            android:enabled="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            style="?attr/secondaryButtonStyle"
+            android:text="Secondary Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            style="?attr/secondaryButtonStyle"
+            android:text="Secondary Button Disabled"
+            android:enabled="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <!--
+    Looks like not properly rendered in design time
+    if Day/Night theme selected
+    -->
+
+    <Button
+            android:text="Explicit Primary Button Day"
+            style="?attr/primaryButtonStyle"
+            android:theme="@style/UITheme.Day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            android:text="Explicit Primary Button Night"
+            style="?attr/primaryButtonStyle"
+            android:theme="@style/UITheme.Night"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tn_buttonRadius">@dimen/gap_large</dimen>
+
+    <dimen name="tn_buttonPrimaryTextSize">20sp</dimen>
+    <dimen name="tn_buttonSecondaryTextSize">@dimen/tn_buttonPrimaryTextSize</dimen>
+</resources>
