@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="gap_small">4dp</dimen>
+    <dimen name="gap_normal">8dp</dimen>
+    <dimen name="gap_large">16dp</dimen>
+    <dimen name="button_min_size">48dp</dimen>
+    <dimen name="text_normal">14sp</dimen>
+</resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    Following 2 themes have to be duplicated,
+    because explicit parent always wins.
+    So if we want to have Base default values + AppCompat default values.
+    we have to have them duplicated, otherwise these values would be ignored if some inherited style would
+    use again explicit inheritance
+
+    Also be sure that all values are defined here,
+    otherwise hard to understand crash as it's not saying attribute name
+    -->
+    <style name="Base.UITheme" parent="Theme.AppCompat.Light">
+        <item name="buttonCornersRadius">0dp</item>
+        <item name="verticalSpaceSmall">@dimen/gap_small</item>
+        <item name="dividerVerticalSpaceSmall">@drawable/divider_vertical_small</item>
+        <item name="screenPadding">@dimen/gap_large</item>
+        <item name="buttonMinSize">@dimen/button_min_size</item>
+        <item name="primaryButtonStyle">@style/UIButton.Primary</item>
+        <item name="primaryButtonTextAppearance">@style/UITextAppearance.Primary</item>
+        <item name="primaryButtonBackground">@drawable/background_button_primary</item>
+        <item name="primaryButtonTextSize">@dimen/text_normal</item>
+        <item name="primaryButtonTextColor">@color/undefined</item>
+        <item name="secondaryButtonStyle">@style/UIButton.Secondary</item>
+        <item name="secondaryButtonBackground">@drawable/background_button_secondary</item>
+        <item name="secondaryButtonTextAppearance">@style/UITextAppearance.Secondary</item>
+        <item name="secondaryButtonTextSize">@dimen/text_normal</item>
+        <item name="secondaryButtonTextColor">@color/undefined</item>
+        <item name="rootContainer">@style/Container.Root</item>
+    </style>
+
+    <style name="Base.UITheme.Night" parent="Theme.AppCompat">
+        <item name="buttonCornersRadius">0dp</item>
+        <item name="verticalSpaceSmall">@dimen/gap_small</item>
+        <item name="dividerVerticalSpaceSmall">@drawable/divider_vertical_small</item>
+        <item name="screenPadding">@dimen/gap_large</item>
+        <item name="buttonMinSize">@dimen/button_min_size</item>
+        <item name="primaryButtonStyle">@style/UIButton.Primary</item>
+        <item name="primaryButtonTextAppearance">@style/UITextAppearance.Primary</item>
+        <item name="primaryButtonBackground">@drawable/background_button_primary</item>
+        <item name="primaryButtonTextSize">@dimen/text_normal</item>
+        <item name="primaryButtonTextColor">@color/undefined</item>
+        <item name="secondaryButtonStyle">@style/UIButton.Secondary</item>
+        <item name="secondaryButtonBackground">@drawable/background_button_secondary</item>
+        <item name="secondaryButtonTextAppearance">@style/UITextAppearance.Secondary</item>
+        <item name="secondaryButtonTextSize">@dimen/text_normal</item>
+        <item name="secondaryButtonTextColor">@color/undefined</item>
+        <item name="rootContainer">@style/Container.Root</item>
+    </style>
+
+    <style name="UITheme">
+        <!-- just placeholder, any sub-style will explicitly inherit from Base.UITheme -->
+    </style>
+
+    <style name="UIButton">
+        <item name="android:paddingTop">@dimen/gap_small</item>
+        <item name="android:paddingBottom">@dimen/gap_small</item>
+        <item name="android:paddingLeft">@dimen/gap_normal</item>
+        <item name="android:paddingRight">@dimen/gap_normal</item>
+        <item name="android:minWidth">?buttonMinSize</item>
+        <item name="android:minHeight">?buttonMinSize</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="UIButton.Primary">
+        <item name="android:textAppearance">?primaryButtonTextAppearance</item>
+        <item name="android:background">?primaryButtonBackground</item>
+    </style>
+
+    <style name="UIButton.Secondary">
+        <item name="android:textAppearance">?secondaryButtonTextAppearance</item>
+        <item name="android:background">?secondaryButtonBackground</item>
+    </style>
+
+    <style name="UITextAppearance"/>
+
+    <style name="UITextAppearance.Primary">
+        <item name="android:textColor">?attr/primaryButtonTextColor</item>
+        <item name="android:textSize">?attr/primaryButtonTextSize</item>
+    </style>
+
+    <style name="UITextAppearance.Secondary">
+        <item name="android:textColor">?secondaryButtonTextColor</item>
+        <item name="android:textSize">?secondaryButtonTextSize</item>
+    </style>
+
+    <style name="Container"/>
+
+    <style name="Container.Root">
+        <item name="android:padding">?screenPadding</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+</resources>

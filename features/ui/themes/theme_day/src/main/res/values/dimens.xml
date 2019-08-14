@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="td_buttonRadius">@dimen/gap_normal</dimen>
+    <dimen name="td_buttonPrimaryTextSize">18sp</dimen>
+    <dimen name="td_buttonSecondaryTextSize">8sp</dimen>
+</resources>

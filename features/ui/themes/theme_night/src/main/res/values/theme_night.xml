@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+           tools:ignore="ResourceName">
+
+    <style name="UITheme.Night" parent="Base.UITheme.Night">
+        <item name="android:textAllCaps">false</item>
+        <item name="screenPadding">@dimen/gap_normal</item>
+        <item name="verticalSpaceSmall">@dimen/gap_normal</item>
+        <item name="primaryButtonTextAppearance">@style/UITextAppearance.Primary.Night</item>
+        <item name="secondaryButtonTextAppearance">@style/UITextAppearance.Secondary.Night</item>
+        <item name="primaryButtonTextColor">@color/tn_primaryButtonTextColor</item>
+        <item name="primaryButtonTextSize">@dimen/tn_buttonPrimaryTextSize</item>
+        <item name="primaryButtonBackgroundRipple">@color/tn_primaryButtonBackgroundRipple</item>
+        <item name="primaryButtonBackgroundDefault">@color/tn_primaryButtonBackgroundDefault</item>
+        <item name="primaryButtonBackgroundDisabled">@color/tn_primaryButtonBackgroundDisabled</item>
+        <item name="secondaryButtonTextColor">@color/tn_primaryButtonTextColor</item>
+        <item name="secondaryButtonTextSize">@dimen/tn_buttonPrimaryTextSize</item>
+        <item name="secondaryButtonBackgroundRipple">@color/tn_secondaryButtonBackgroundRipple</item>
+        <item name="secondaryButtonBackgroundDefault">@color/tn_secondaryButtonBackgroundDefault</item>
+        <item name="secondaryButtonBackgroundDisabled">@color/tn_secondaryButtonBackgroundDisabled</item>
+    </style>
+
+    <style name="UITextAppearance.Primary.Night"/>
+    <style name="UITextAppearance.Secondary.Night"/>
+</resources>

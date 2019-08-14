@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="td_primaryButtonBackgroundRipple">#FFF</color>
+    <color name="td_primaryButtonBackgroundDefault">#f45042</color>
+    <color name="td_primaryButtonBackgroundDisabled">#FF866967</color>
+    <color name="td_primaryButtonTextColor">#FFF</color>
+
+    <color name="td_secondaryButtonTextColorDefault">#000</color>
+    <color name="td_secondaryButtonTextColorDisabled">#FFF</color>
+    <color name="td_secondaryButtonBackgroundDefault">#f4b841</color>
+    <color name="td_secondaryButtonBackgroundPressed">#f7e1b7</color>
+    <color name="td_secondaryButtonBackgroundDisabled">#FF5F5747</color>
+</resources>
