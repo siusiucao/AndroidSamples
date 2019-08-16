@@ -9,4 +9,5 @@ android {
 
 dependencies {
     implementation project(":features:ui:themes:theme_app")
+    implementation project(":features:security:keystore")
 }
