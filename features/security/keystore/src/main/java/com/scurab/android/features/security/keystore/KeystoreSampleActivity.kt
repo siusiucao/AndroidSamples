@@ -6,15 +6,13 @@ import android.app.KeyguardManager
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.security.ConfirmationCallback
 import android.security.ConfirmationPrompt
-import android.security.keystore.KeyGenParameterSpec
-import android.security.keystore.KeyProperties
-import android.security.keystore.StrongBoxUnavailableException
-import android.security.keystore.UserNotAuthenticatedException
+import android.security.keystore.*
 import android.util.Base64
 import android.util.Log
 import android.view.View
@@ -25,11 +23,13 @@ import com.google.android.material.snackbar.Snackbar
 import com.scurab.android.features.security.keystore.app.R
 import kotlinx.android.synthetic.main.activity_keystore.*
 import java.security.*
+import java.security.spec.KeySpec
 import java.util.*
 import java.util.concurrent.Executor
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
+import javax.crypto.SecretKeyFactory
 import javax.crypto.spec.IvParameterSpec
 import javax.security.auth.x500.X500Principal
 
@@ -321,6 +321,7 @@ class KeystoreSampleActivity : Activity() {
 
         key.setTextBase(signature)
         key.tag = signature
+        updateKeyTextColor(alias)
     }
 
     private fun verify() {
@@ -343,6 +344,7 @@ class KeystoreSampleActivity : Activity() {
         }
 
         output.setText("Verified:$verified")
+        updateKeyTextColor(alias)
     }
     //endregion
 
@@ -364,6 +366,7 @@ class KeystoreSampleActivity : Activity() {
 
         key.setTextBase(encrypted)
         key.tag = encrypted
+        updateKeyTextColor(alias)
     }
 
     fun decrypt() {
@@ -378,6 +381,7 @@ class KeystoreSampleActivity : Activity() {
         val keyEntry = aliasConfigs[alias]
         val keys = keyEntry?.keys ?: npe("Alias:$alias not found!")
 
+
         val isAsymmetric = alias.isAsymmetricAlias()
         val keyForDecryption: Key = if (isAsymmetric) keys.privateKey else keys.symmetricKey
         val decrypted = keyEntry.cipher.run {
@@ -386,8 +390,30 @@ class KeystoreSampleActivity : Activity() {
         }
 
         output.setText(String(decrypted))
+        updateKeyTextColor(alias)
+        updateKeyTextColor(alias)
     }
     //endregion
+
+    fun getKeyInfo(alias : String) : KeyInfo? {
+        return try {
+            val keyEntry = aliasConfigs[getAlias()]
+            val privateKey = keyEntry?.keys?.privateKey ?: npe("Need private key")
+            KeyFactory.getInstance(privateKey.algorithm, STORE).run {
+                getKeySpec(privateKey, KeyInfo::class.java)
+            }
+        } catch (e: Throwable) {
+            e.printStackTrace()
+            null
+        }
+    }
+
+    private fun updateKeyTextColor(alias: String) {
+        val color = getKeyInfo(alias)?.let {
+            if (it.isInsideSecureHardware) R.color.dark_green else R.color.dark_red
+        } ?: Color.BLACK
+        key.setTextColor(resources.getColor(color))
+    }
 }
 
 private fun String.isAsymmetricAlias() : Boolean = toLowerCase().startsWith("as_")
