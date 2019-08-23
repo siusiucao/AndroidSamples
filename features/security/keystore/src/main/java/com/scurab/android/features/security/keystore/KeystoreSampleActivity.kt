@@ -219,7 +219,7 @@ class KeystoreSampleActivity : Activity() {
                 }
                 e is UnsecureDeviceException -> {
                     Snackbar
-                        .make(findViewById(android.R.id.content), "Screen lock required", Snackbar.LENGTH_INDEFINITE)
+                        .make(findViewById(android.R.id.content), "Screen lock required", Snackbar.LENGTH_LONG)
                         .setAction("Settings") {
                             startActivity(Intent(Settings.ACTION_SECURITY_SETTINGS))
                         }
@@ -228,7 +228,7 @@ class KeystoreSampleActivity : Activity() {
                 else -> {
                     val msg = e.message ?: e.javaClass.simpleName
                     Snackbar
-                        .make(findViewById(android.R.id.content), msg, Snackbar.LENGTH_INDEFINITE)
+                        .make(findViewById(android.R.id.content), msg, Snackbar.LENGTH_LONG)
                         .show()
                     Log.e(TAG, msg)
                 }
