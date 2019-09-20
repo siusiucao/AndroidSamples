@@ -3,4 +3,6 @@ include ':features:ui:themes:theme_base'
 include ':features:ui:themes:theme_day'
 include ':features:ui:themes:theme_night'
 include ':features:ui:themes:theme_app'
+
+include ':features:security:keystore'
 rootProject.name='Android Samples'

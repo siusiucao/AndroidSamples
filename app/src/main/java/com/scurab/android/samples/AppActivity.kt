@@ -10,12 +10,14 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.scurab.android.features.security.keystore.KeystoreSampleActivity
 import com.scurab.android.features.ui.themes.app.ThemesSampleActivity
 
 class AppActivity : AppCompatActivity() {
 
     private val items = listOf(
-        Screen("Themes", ThemesSampleActivity::class.java)
+        Screen(ThemesSampleActivity::class.java),
+        Screen(KeystoreSampleActivity::class.java)
     ).sortedBy { it.name }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +37,9 @@ class AppActivity : AppCompatActivity() {
 }
 
 private class Screen(val name: String, val intent: (Activity) -> Intent) {
+    constructor(clazz: Class<out Activity>) :
+            this(clazz.simpleName.replace("SampleActivity", ""), clazz)
+
     constructor(name: String, clazz: Class<out Activity>) :
             this(name, { activity -> Intent(activity, clazz) })
 }
