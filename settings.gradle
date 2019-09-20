@@ -5,4 +5,10 @@ include ':features:ui:themes:theme_night'
 include ':features:ui:themes:theme_app'
 
 include ':features:security:keystore'
+
+include ':features:di:dagger2:dagger2_app'
+include ':features:di:dagger2:dagger2_base'
+include ':features:di:dagger2:dagger2_feature1'
+include ':features:di:dagger2:dagger2_feature2'
+
 rootProject.name='Android Samples'

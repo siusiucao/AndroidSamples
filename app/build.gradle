@@ -11,4 +11,5 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.1.0-beta04"
     implementation project(":features:ui:themes:theme_app")
     implementation project(":features:security:keystore")
+    implementation project(":features:di:dagger2:dagger2_app")
 }

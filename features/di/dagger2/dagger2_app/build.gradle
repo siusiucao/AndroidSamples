@@ -1,0 +1,12 @@
+apply plugin: 'com.android.library'
+apply from: "$rootProject.projectDir/build-android.gradle"
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    kapt "com.google.dagger:dagger-compiler:2.24"
+    kapt "com.google.dagger:dagger-android-processor:2.24"
+
+    api project(":features:di:dagger2:dagger2_base")
+    api project(":features:di:dagger2:dagger2_feature1")
+    api project(":features:di:dagger2:dagger2_feature2")
+}

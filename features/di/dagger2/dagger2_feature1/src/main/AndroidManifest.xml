@@ -1,0 +1,6 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.scurab.android.features.di.dagger2.feature1">
+    <application>
+        <activity android:name=".Feature1Activity" />
+    </application>
+</manifest>
