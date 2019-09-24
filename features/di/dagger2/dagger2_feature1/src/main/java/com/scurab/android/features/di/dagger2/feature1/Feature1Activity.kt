@@ -4,7 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import com.scurab.android.features.di.dagger2.base.BaseActivity
-import com.scurab.android.features.di.dagger2.base.DIComponentHolder
+import com.scurab.android.features.di.dagger2.base.di.AndroidInjector.dagger
+import com.scurab.android.features.di.dagger2.base.di.DIComponentHolder
 import com.scurab.android.features.di.dagger2.feature1.di.Feature1Component
 import com.scurab.android.features.di.dagger2.feature1.di.Feature1ComponentProvider
 import javax.inject.Inject
@@ -15,10 +16,10 @@ class Feature1Activity : BaseActivity(), DIComponentHolder<Feature1Component> {
 
     @Inject lateinit var scopedUseCase: Feature1ScopedUseCase
     @Inject lateinit var useCase: Feature1UseCase
-    @Inject lateinit var activityUseCase: ActivityDepenedentUseCase
+    @Inject lateinit var activityUseCase: ActivityDependentUseCase
     @Inject lateinit var navigation: Feature1Navigation
 
-    override val component by dagger(Feature1ComponentProvider::class.java, false) {
+    override val component by dagger(Feature1ComponentProvider::class.java) {
         feature1Component()
     }
 
@@ -31,7 +32,7 @@ class Feature1Activity : BaseActivity(), DIComponentHolder<Feature1Component> {
         View.inflate(this, R.layout.activity_feature1, findViewById(R.id.test_container))
 
         findViewById<View>(R.id.navigate_to_feature2_activity).setOnClickListener {
-            navigation.navigateToFeature2Activity()
+            useCase.navigateToFeature2Activity()
         }
 
         findViewById<View>(R.id.navigate_to_feature2_fragment).setOnClickListener {

@@ -1,8 +1,8 @@
 package com.scurab.android.features.di.dagger2.feature1.di
 
-import com.scurab.android.features.di.dagger2.base.ActivityScope
-import com.scurab.android.features.di.dagger2.base.DIComponent
-import com.scurab.android.features.di.dagger2.base.DIComponentProvider
+import com.scurab.android.features.di.dagger2.base.di.ActivityScope
+import com.scurab.android.features.di.dagger2.base.di.DIComponent
+import com.scurab.android.features.di.dagger2.base.di.DIComponentProvider
 import com.scurab.android.features.di.dagger2.feature1.Feature1Activity
 import dagger.Subcomponent
 

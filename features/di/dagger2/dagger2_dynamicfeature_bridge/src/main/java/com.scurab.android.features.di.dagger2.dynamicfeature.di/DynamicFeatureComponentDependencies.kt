@@ -1,6 +1,8 @@
 package com.scurab.android.features.di.dagger2.dynamicfeature.di
 
 import androidx.appcompat.app.AppCompatActivity
+import com.scurab.android.features.di.dagger2.base.SessionManager
+import com.scurab.android.features.di.dagger2.base.di.DIComponentDependencies
 import com.scurab.android.features.di.dagger2.base.util.AppCore
 import com.scurab.android.features.di.dagger2.base.util.Reference
 import com.scurab.android.features.di.dagger2.base.util.SessionToken
@@ -18,10 +20,11 @@ import com.scurab.android.features.di.dagger2.base.util.SessionToken
  * mentioned in prev point
  */
 //just basic iface, all those refs will be provided via InternalComponent => InternalComponent has to implement this iface
-interface DynamicFeatureComponentDependencies {
+interface DynamicFeatureComponentDependencies : DIComponentDependencies {
 
     fun provideAppCore(): AppCore
     fun provideSessionToken(): SessionToken
+    fun provideSessionManager(): SessionManager
     fun provideActivity(): Reference<AppCompatActivity>
     fun provideDynamicFeatureNavigation() : DynamicFeatureNavigation
 }

@@ -2,7 +2,8 @@ package com.scurab.android.features.di.dagger2.feature2
 
 import android.os.Bundle
 import com.scurab.android.features.di.dagger2.base.BaseActivity
-import com.scurab.android.features.di.dagger2.base.DIComponentHolder
+import com.scurab.android.features.di.dagger2.base.di.AndroidInjector.dagger
+import com.scurab.android.features.di.dagger2.base.di.DIComponentHolder
 import com.scurab.android.features.di.dagger2.base.util.AppCore
 import com.scurab.android.features.di.dagger2.base.util.SessionToken
 import com.scurab.android.features.di.dagger2.feature2.di.Feature2Component
@@ -15,8 +16,8 @@ class Feature2Activity : BaseActivity(), DIComponentHolder<Feature2Component> {
     @Inject lateinit var appCore: AppCore
     @Inject lateinit var sessionToken: SessionToken
 
-    override val component by dagger(Feature2ComponentProvider::class.java, false) {
-        feature2Component(Feature2Module())
+    override val component by dagger(Feature2ComponentProvider::class.java, true) {
+        feature2Component(Feature2Module(this@Feature2Activity))
     }
 
     override fun inject() {

@@ -19,6 +19,7 @@ class AppNavigation @Inject constructor(private val activityRef: Reference<AppCo
     override fun navigateToFeature2Fragment() = Feature2Fragment().replace()
 
     override fun navigateToDynamicFeatureActivity() =
+        //we don't have reference to DynamicFeatureModule, so we can start the activity only this way
         start(Class.forName("com.scurab.android.features.di.dagger2.dynamicfeature.DynamicFeatureActivity"))
 
     private fun start(clazz: Class<*>) {

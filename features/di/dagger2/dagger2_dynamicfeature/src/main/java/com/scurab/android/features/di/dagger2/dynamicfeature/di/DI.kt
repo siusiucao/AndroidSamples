@@ -1,7 +1,7 @@
 package com.scurab.android.features.di.dagger2.dynamicfeature.di
 
-import com.scurab.android.features.di.dagger2.base.ActivityScope
-import com.scurab.android.features.di.dagger2.base.DIComponent
+import com.scurab.android.features.di.dagger2.base.di.ActivityScope
+import com.scurab.android.features.di.dagger2.base.di.DIComponent
 import com.scurab.android.features.di.dagger2.dynamicfeature.DynamicFeatureActivity
 import dagger.Component
 

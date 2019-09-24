@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.scurab.android.features.di.dagger2.base.util.Reference
 import com.scurab.android.features.di.dagger2.base.util.SessionToken
 import javax.inject.Inject
-import javax.inject.Named
 
 class Feature2UseCase @Inject constructor(
     private val activity: Reference<AppCompatActivity>,

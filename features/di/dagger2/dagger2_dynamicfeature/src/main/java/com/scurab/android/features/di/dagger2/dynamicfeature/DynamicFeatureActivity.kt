@@ -3,9 +3,10 @@ package com.scurab.android.features.di.dagger2.dynamicfeature
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import com.scurab.android.features.di.dagger2.base.AndroidInjector
 import com.scurab.android.features.di.dagger2.base.BaseActivity
-import com.scurab.android.features.di.dagger2.base.DIComponentHolder
+import com.scurab.android.features.di.dagger2.base.di.AndroidInjector
+import com.scurab.android.features.di.dagger2.base.di.AndroidInjector.daggerDynamicModule
+import com.scurab.android.features.di.dagger2.base.di.DIComponentHolder
 import com.scurab.android.features.di.dagger2.base.util.AppCore
 import com.scurab.android.features.di.dagger2.dynamicfeature.di.DaggerDynamicFeatureComponent
 import com.scurab.android.features.di.dagger2.dynamicfeature.di.DynamicFeatureComponent
@@ -16,7 +17,7 @@ class DynamicFeatureActivity : BaseActivity(), DIComponentHolder<DynamicFeatureC
     @Inject lateinit var appCore: AppCore
     @Inject lateinit var useCase: DynamicUseCase
 
-    override val component: DynamicFeatureComponent by lazy {
+    override val component: DynamicFeatureComponent by daggerDynamicModule {
         DaggerDynamicFeatureComponent
             .builder()
             .dynamicFeatureComponentDependencies(AndroidInjector.dependencies(this))

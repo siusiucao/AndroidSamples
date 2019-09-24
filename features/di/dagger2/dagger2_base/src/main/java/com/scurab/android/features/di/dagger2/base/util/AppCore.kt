@@ -1,7 +1,7 @@
 package com.scurab.android.features.di.dagger2.base.util
 
 import android.app.Application
-import com.scurab.android.features.di.dagger2.base.AppScope
+import com.scurab.android.features.di.dagger2.base.di.AppScope
 import javax.inject.Inject
 
 /**

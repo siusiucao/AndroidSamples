@@ -2,24 +2,29 @@ package com.scurab.android.features.di.dagger2.app
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
+import com.scurab.android.features.di.dagger2.app.di.*
+import com.scurab.android.features.di.dagger2.base.SessionManager
 import com.scurab.android.features.di.dagger2.base.util.SessionToken
 
-class AppDIDelegate {
+/**
+ * Help class for DI handling and an example how to do a session management in terms of DI
+ */
+class AppDaggerDelegate(private val app: Application) : SessionManager {
 
     private var _appComponent: AppComponent? = null
     private var _sessionComponent: SessionComponent? = null
 
-    private fun requireAppComponent(app: Application): AppComponent {
-        val appComponent = DaggerAppComponent
+    fun requireAppComponent(): AppComponent {
+        val appComponent = _appComponent ?: DaggerAppComponent
             .builder()
-            .appModule(AppModule(app))
+            .appModule(AppModule(app, this))
             .build()
         _appComponent = appComponent
         return appComponent
     }
 
-    fun resetSession(app: Application, token: SessionToken) {
-        _sessionComponent = requireAppComponent(app).sessionComponent(SessionModule(token))
+    override fun updateSession(token: SessionToken) {
+        _sessionComponent = requireAppComponent().sessionComponent(SessionModule(token))
     }
 
     fun createInternalActivityComponent(activity: AppCompatActivity): InternalActivityComponent {
