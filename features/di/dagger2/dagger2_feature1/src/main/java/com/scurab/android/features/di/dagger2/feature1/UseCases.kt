@@ -19,12 +19,10 @@ class Feature1UseCase @Inject constructor(
     }
 }
 
-
 @ActivityScope
 class Feature1ScopedUseCase @Inject constructor(private val feature1UseCase: Feature1UseCase) {
     fun doSomething(): String = feature1UseCase.doSomething() + System.currentTimeMillis()
 }
-
 
 @ActivityScope
 class ActivityDependentUseCase @Inject constructor(private val activityRef: Reference<AppCompatActivity>) {
