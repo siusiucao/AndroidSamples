@@ -37,6 +37,10 @@ class Feature1Activity : BaseActivity(), DIComponentHolder<Feature1Component> {
         findViewById<View>(R.id.navigate_to_feature2_fragment).setOnClickListener {
             navigation.navigateToFeature2Fragment()
         }
+
+        findViewById<View>(R.id.navigate_to_dynamic_feature_activity).setOnClickListener {
+            navigation.navigateToDynamicFeatureActivity()
+        }
     }
 
     override fun onResume() {

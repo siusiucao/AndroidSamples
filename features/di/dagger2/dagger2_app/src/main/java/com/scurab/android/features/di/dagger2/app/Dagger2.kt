@@ -7,6 +7,8 @@ import com.scurab.android.features.di.dagger2.base.util.ActivityModule
 import com.scurab.android.features.di.dagger2.base.util.Reference
 import com.scurab.android.features.di.dagger2.base.util.SessionToken
 import com.scurab.android.features.di.dagger2.base.util.WeakMutableReference
+import com.scurab.android.features.di.dagger2.dynamicfeature.di.DynamicFeatureComponentDependencies
+import com.scurab.android.features.di.dagger2.dynamicfeature.di.DynamicFeatureNavigation
 import com.scurab.android.features.di.dagger2.feature1.Feature1Navigation
 import com.scurab.android.features.di.dagger2.feature1.di.Feature1ComponentProvider
 import com.scurab.android.features.di.dagger2.feature2.Feature2Fragment
@@ -59,10 +61,14 @@ interface InternalActivityComponent : DIComponent,
     Feature2ComponentProvider,
     //F2F is started in F1Activity and F2Activity, hence it can't depend on anything specific from each particular feature module
     //and for case injecting from F1Activity, it has to be here, because F1Component doesn't know about it
-    Feature2Fragment.Injectable
+    Feature2Fragment.Injectable,
+    DynamicFeatureComponentDependencies
 
 @Module
 abstract class BindingModule {
     @Binds
-    abstract fun navigation(app: AppNavigation): Feature1Navigation
+    abstract fun feature1Navigation(app: AppNavigation): Feature1Navigation
+
+    @Binds
+    abstract fun dynamicFeatureNavigation(app: AppNavigation): DynamicFeatureNavigation
 }

@@ -5,10 +5,16 @@ android {
     defaultConfig {
         applicationId "com.scurab.android.samples"
     }
+
+    dynamicFeatures = [":features:di:dagger2:dagger2_dynamicfeature"]
 }
 
 dependencies {
-    implementation "androidx.recyclerview:recyclerview:1.1.0-beta04"
+    api "androidx.recyclerview:recyclerview:1.1.0-beta04"
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
     implementation project(":features:ui:themes:theme_app")
     implementation project(":features:security:keystore")
     implementation project(":features:di:dagger2:dagger2_app")

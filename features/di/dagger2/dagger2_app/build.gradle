@@ -9,4 +9,5 @@ dependencies {
     api project(":features:di:dagger2:dagger2_base")
     api project(":features:di:dagger2:dagger2_feature1")
     api project(":features:di:dagger2:dagger2_feature2")
+    api project(":features:di:dagger2:dagger2_dynamicfeature_bridge")
 }

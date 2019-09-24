@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AnSamples</string>
+    <string name="title_dagger2_dynamicfeature">Dagger Dynamic Feature</string>
 </resources>

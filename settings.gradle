@@ -10,5 +10,7 @@ include ':features:di:dagger2:dagger2_app'
 include ':features:di:dagger2:dagger2_base'
 include ':features:di:dagger2:dagger2_feature1'
 include ':features:di:dagger2:dagger2_feature2'
+include ':features:di:dagger2:dagger2_dynamicfeature_bridge'
+include ':features:di:dagger2:dagger2_dynamicfeature'
 
 rootProject.name='Android Samples'

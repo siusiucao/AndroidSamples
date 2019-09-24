@@ -71,7 +71,7 @@ object AndroidInjector {
         return if (clazz.isAssignableFrom(diComponent.javaClass)) {
             clazz.cast(diComponent) ?: throw IllegalArgumentException("Unable to cast ${diComponent.javaClass.name} to ${clazz.name}")
         } else {
-            if(true) {
+            if (true) {
                 //this means InternalActivityComponent is NOT your componentProvider (clazz)
                 throw IllegalStateException("${diComponent.javaClass} doesn't extend ${diComponent.javaClass}")
             }
@@ -99,5 +99,12 @@ object AndroidInjector {
     private fun <T> Any.assertObjectCast(clazz: Class<T>): T {
         return this as? T
             ?: throw IllegalStateException("'${this.javaClass.name}' doesn't implement/extend '${clazz.name}'")
+    }
+
+    fun <T> dependencies(activity: BaseActivity): T {
+        val internalActivityComponent =
+            componentProvider(activity, InternalActivityComponentProvider::class.java)
+                .internalActivityComponent(activity)
+        return internalActivityComponent as T
     }
 }

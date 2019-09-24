@@ -1,24 +1,29 @@
 package com.scurab.android.features.di.dagger2.app
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.scurab.android.features.di.dagger2.base.util.Reference
+import com.scurab.android.features.di.dagger2.dynamicfeature.di.DynamicFeatureNavigation
 import com.scurab.android.features.di.dagger2.feature1.Feature1Navigation
 import com.scurab.android.features.di.dagger2.feature2.Feature2Activity
 import com.scurab.android.features.di.dagger2.feature2.Feature2Fragment
 import javax.inject.Inject
 
-class AppNavigation @Inject constructor(private val activityRef: Reference<AppCompatActivity>) : Feature1Navigation {
+class AppNavigation @Inject constructor(private val activityRef: Reference<AppCompatActivity>) :
+    Feature1Navigation,
+    DynamicFeatureNavigation {
 
-    override fun navigateToFeature2Activity() = Feature2Activity::class.java.start()
+    override fun navigateToFeature2Activity() = start(Feature2Activity::class.java)
 
     override fun navigateToFeature2Fragment() = Feature2Fragment().replace()
 
-    private fun Class<out Activity>.start() {
+    override fun navigateToDynamicFeatureActivity() =
+        start(Class.forName("com.scurab.android.features.di.dagger2.dynamicfeature.DynamicFeatureActivity"))
+
+    private fun start(clazz: Class<*>) {
         activityRef.require().apply {
-            startActivity(Intent(this, Feature2Activity::class.java))
+            startActivity(Intent(this, clazz))
         }
     }
 

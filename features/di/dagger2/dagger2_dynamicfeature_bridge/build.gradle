@@ -1,0 +1,6 @@
+apply plugin: 'com.android.library'
+apply from: "$rootProject.projectDir/build-android.gradle"
+
+dependencies {
+    implementation project(":features:di:dagger2:dagger2_base")
+}

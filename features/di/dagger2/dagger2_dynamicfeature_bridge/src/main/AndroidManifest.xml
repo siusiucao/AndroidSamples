@@ -1,0 +1,4 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.scurab.android.features.di.dagger2.dagger2_dynamicsfeature_bridge">
+    
+</manifest>
