@@ -11,24 +11,24 @@ import com.scurab.android.features.di.dagger2.base.util.SessionToken
  */
 class AppDaggerDelegate(private val app: Application) : SessionManager {
 
-    private var _appComponent: AppComponent? = null
-    private var _sessionComponent: SessionComponent? = null
+    private var appComponent: AppComponent? = null
+    private var sessionComponent: SessionComponent? = null
 
     fun requireAppComponent(): AppComponent {
-        val appComponent = _appComponent ?: DaggerAppComponent
+        val appComponent = appComponent ?: DaggerAppComponent
             .builder()
             .appModule(AppModule(app, this))
             .build()
-        _appComponent = appComponent
+        this.appComponent = appComponent
         return appComponent
     }
 
     override fun updateSession(token: SessionToken) {
-        _sessionComponent = requireAppComponent().sessionComponent(SessionModule(token))
+        sessionComponent = requireAppComponent().sessionComponent(SessionModule(token))
     }
 
     fun createInternalActivityComponent(activity: AppCompatActivity): InternalActivityComponent {
-        return (_sessionComponent ?: throw IllegalStateException("Session not created yet!"))
+        return (sessionComponent ?: throw IllegalStateException("Session not created yet!"))
             .internalActivityComponent(InternalActivityModule(activity))
     }
 }

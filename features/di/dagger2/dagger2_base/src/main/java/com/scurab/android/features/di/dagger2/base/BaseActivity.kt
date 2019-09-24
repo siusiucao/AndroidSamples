@@ -10,6 +10,7 @@ import javax.inject.Inject
 abstract class BaseActivity : AppCompatActivity() {
 
     @Suppress("PropertyName")
+    //updating reference is necessary if we have ActivityScope components tied to ViewModel's lifecycle (survives rotation)
     @Inject lateinit var _self: Reference<AppCompatActivity>
 
     protected lateinit var testContainer: ViewGroup

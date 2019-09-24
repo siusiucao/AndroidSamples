@@ -14,6 +14,10 @@ interface DIComponent
  */
 interface DIComponentProvider
 
+/**
+ * Marker interface
+ * For easier working with [AndroidInjector]
+ */
 interface DIComponentDependencies
 
 /**

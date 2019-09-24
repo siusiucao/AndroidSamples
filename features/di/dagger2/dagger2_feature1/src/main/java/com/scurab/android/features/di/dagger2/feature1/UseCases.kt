@@ -28,6 +28,5 @@ class Feature1ScopedUseCase @Inject constructor(private val feature1UseCase: Fea
 
 @ActivityScope
 class ActivityDependentUseCase @Inject constructor(private val activityRef: Reference<AppCompatActivity>) {
-
     fun hasActivity(): Boolean = activityRef.get() != null
 }
