@@ -19,17 +19,16 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
+import androidx.security.crypto.EncryptedSharedPreferences
 import com.google.android.material.snackbar.Snackbar
 import com.scurab.android.features.security.keystore.app.R
 import kotlinx.android.synthetic.main.activity_keystore.*
 import java.security.*
-import java.security.spec.KeySpec
 import java.util.*
 import java.util.concurrent.Executor
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
-import javax.crypto.SecretKeyFactory
 import javax.crypto.spec.IvParameterSpec
 import javax.security.auth.x500.X500Principal
 
@@ -63,6 +62,14 @@ private const val ALIAS_SYMMETRIC_ENCRYPT = "S_EncryptDecrypt"
 @TargetApi(23)
 class KeystoreSampleActivity : Activity() {
 
+    //just imported to see how can be shared prefs used
+    private val encryptedSharedPreference = EncryptedSharedPreferences.create(
+        "encsharedprefs.xml",
+        "KeystoreSampleActivity",
+        this,
+        EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+        EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+    )
     private val keyguardManager by lazy { (getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager) }
     private val ivParameterSpec = IvParameterSpec(byteArrayOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15))
     private val aliasConfigs = listOf(

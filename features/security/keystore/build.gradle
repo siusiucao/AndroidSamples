@@ -3,4 +3,5 @@ apply from: "$rootProject.projectDir/build-android.gradle"
 
 dependencies {
     implementation 'com.google.android.material:material:1.0.0'
+    implementation group: 'androidx.security', name: 'security-crypto', version: '1.0.0-alpha02'
 }
