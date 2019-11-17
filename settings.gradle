@@ -5,4 +5,9 @@ include ':features:ui:themes:theme_night'
 include ':features:ui:themes:theme_app'
 
 include ':features:security:keystore'
+
+include ':features:jetpack:navigation:common'
+include ':features:jetpack:navigation:feature1'
+include ':features:jetpack:navigation:feature2'
+include ':features:jetpack:navigation:nav_app'
 rootProject.name='Android Samples'

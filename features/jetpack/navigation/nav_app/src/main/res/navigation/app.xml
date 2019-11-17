@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_app"
+    android:label="Main App Journey"
+    app:startDestination="@id/fragment_start">
+
+    <fragment
+        android:id="@+id/fragment_start"
+        android:label="Splash Screen"
+        android:name="com.example.navigationsample.AppStartFragment">
+
+        <action
+            android:id="@+id/action_fragment_main_to_fragment_home"
+            app:destination="@id/fragment_home"
+            app:popUpTo="@id/fragment_start"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_fragment_start_to_nav_login_journey"
+            app:destination="@id/nav_login_journey" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:label="Home"
+        android:name="com.example.navigationsample.HomeFragment">
+
+        <!-- Just in code -->
+        <!--<action
+            android:id="@+id/action_fragment_home_to_nav_feature1_journey"
+            app:destination="@id/nav_feature1_journey" />-->
+        <action
+            android:id="@+id/action_fragment_home_to_nav_feature2_journey"
+            app:destination="@id/nav_feature2_journey" />
+
+        <action
+            android:id="@+id/action_fragment_home_to_help"
+            app:destination="@id/fragment_help_dialog" />
+        <action
+            android:id="@+id/action_fragment_home_to_tabActivity"
+            app:destination="@id/tabActivity" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/fragment_help_dialog"
+        android:name="com.example.navigationsample.HelpBottomSheetFragmentFragment">
+    </dialog>
+
+    <include app:graph="@navigation/login" />
+    <include app:graph="@navigation/nav_feature1_journey" />
+    <include app:graph="@navigation/nav_feature2_journey" />
+    <activity
+        android:id="@+id/tabActivity"
+        android:name="com.example.navigationsample.NavigationTabActivity"
+        android:label="TabActivity" />
+
+</navigation>

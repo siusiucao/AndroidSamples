@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_login_journey"
+        android:label="Login Journey"
+        app:startDestination="@id/fragment_login_step1">
+
+    <fragment
+            android:id="@+id/fragment_login_step1"
+            android:name="com.example.navigationsample.LoginFragmentStep1"
+            android:label="Login">
+        <action
+                android:id="@+id/action_fragment_login_step1_to_fragment_login_step2"
+                app:destination="@id/fragment_login_step2" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/fragment_login_step2"
+            android:name="com.example.navigationsample.LoginFragmentStep2"
+            android:label="Login">
+        <action
+                android:id="@+id/action_fragment_login_step2_to_fragment_login_step3"
+                app:destination="@id/fragment_login_step3" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/fragment_login_step3"
+            android:name="com.example.navigationsample.LoginFragmentStep3"
+            android:label="Login">
+
+        <action
+                android:id="@+id/action_fragment_login_step3_leave_journey"
+                app:popUpTo="@id/nav_login_journey"
+                app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

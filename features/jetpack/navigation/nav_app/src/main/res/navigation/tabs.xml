@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/tabFragmentLeftStep1">
+
+
+    <fragment
+        android:id="@+id/tabFragmentLeftStep1"
+        android:name="com.example.navigationsample.TabFragmentLeftStep1"
+        android:label="TabFragmentLeftStep1">
+        <action
+            android:id="@+id/action_tabFragmentLeftStep1_to_tabFragmentLeftStep2"
+            app:destination="@id/tabFragmentLeftStep2" />
+        <action
+            android:id="@+id/action_tabFragmentLeftStep1_to_tabFragmentRightStep1"
+            app:destination="@id/tabFragmentRightStep1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tabFragmentLeftStep2"
+        android:name="com.example.navigationsample.TabFragmentLeftStep2"
+        android:label="TabFragmentLeftStep2">
+        <action
+            android:id="@+id/action_tabFragmentLeftStep2_to_tabFragmentRightStep2"
+            app:destination="@id/tabFragmentRightStep2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tabFragmentRightStep1"
+        android:name="com.example.navigationsample.TabFragmentRightStep1"
+        android:label="TabFragmentRightStep1">
+        <action
+            android:id="@+id/action_tabFragmentRightStep1_to_tabFragmentRightStep2"
+            app:destination="@id/tabFragmentRightStep2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tabFragmentRightStep2"
+        android:name="com.example.navigationsample.TabFragmentRightStep2"
+        android:label="TabFragmentRightStep2" />
+
+    <fragment
+        android:id="@+id/helpContainerFragment"
+        android:name="com.example.navigationsample.HelpContainerFragmentFragment"
+        android:label="HelpContainerFragmentFragment" />
+
+</navigation>

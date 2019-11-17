@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_feature1_journey"
+    android:label="Feature 1 Journey"
+    app:startDestination="@+id/f1_fragment_step1"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@id/f1_fragment_step1"
+        android:label="Feature1 Step1"
+        android:name="com.example.feature1.Feature1FragmentStep1">
+
+        <action
+            android:id="@+id/action_f1_fragment_step1_to_f1_fragment_step2"
+            app:destination="@id/f1_fragment_step2" />
+        <action
+            android:id="@+id/action_f1_fragment_step2_to_f2_journey"
+            app:destination="@id/nav_feature2_journey" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="https://navsample/feature1/{id}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/f1_fragment_step2"
+        android:label="Feature1 Step2"
+        android:name="com.example.feature1.Feature1FragmentStep2">
+        <action
+            android:id="@+id/action_f1_fragment_step2_leave_journey"
+            app:popUpTo="@id/nav_feature1_journey"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_f1_fragment_step2_to_f2_journey"
+            app:destination="@id/nav_feature2_journey" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="https://navsample/feature1/{id}/finish?button1={button1}" />
+    </fragment>
+</navigation>

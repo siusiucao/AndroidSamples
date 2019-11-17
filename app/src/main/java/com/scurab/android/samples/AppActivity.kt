@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.navigationsample.NavigationActivity
 import com.scurab.android.features.security.keystore.KeystoreSampleActivity
 import com.scurab.android.features.ui.themes.app.ThemesSampleActivity
 
@@ -17,7 +18,8 @@ class AppActivity : AppCompatActivity() {
 
     private val items = listOf(
         Screen(ThemesSampleActivity::class.java),
-        Screen(KeystoreSampleActivity::class.java)
+        Screen(KeystoreSampleActivity::class.java),
+        Screen(NavigationActivity::class.java)
     ).sortedBy { it.name }
 
     override fun onCreate(savedInstanceState: Bundle?) {

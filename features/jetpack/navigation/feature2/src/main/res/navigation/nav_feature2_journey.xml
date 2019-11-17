@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_feature2_journey"
+    android:label="Feature 2 Journey"
+    app:startDestination="@+id/f2_fragment_step1"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@id/f2_fragment_step1"
+        android:label="Feature2 Step1"
+        android:name="com.example.feature2.Feature2FragmentStep1">
+
+        <action
+            android:id="@+id/action_f2_fragment_step1_leave_joruney"
+            app:popUpTo="@id/nav_feature2_journey"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

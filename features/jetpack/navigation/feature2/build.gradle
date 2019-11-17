@@ -1,0 +1,7 @@
+apply plugin: 'com.android.library'
+apply from: "$rootProject.projectDir/build-android.gradle"
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+dependencies {
+    implementation project(":features:jetpack:navigation:common")
+}
